@@ -1,0 +1,4 @@
+USE 购物车系统;
+ALTER TABLE thing ADD num INT;
+UPDATE  thing set num=100;
+SELECT *FROM thing;

@@ -1,0 +1,7 @@
+use 购物车系统;
+CREATE TABLE userOrder(
+  userName VARCHAR(10) PRIMARY KEY,
+  thingName VARCHAR(10) not null ,
+  num INT CHECK (num>0),
+  buyDate DATE
+);

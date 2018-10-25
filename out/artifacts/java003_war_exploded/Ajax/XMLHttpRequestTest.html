@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试XMLHttpRequest对象</title>
+    <script type="text/javascript">
+        function test(){
+//            alert();
+            var test=document.getElementById("test");
+            var str=test.value;
+            var xmlhttp;
+
+
+            if(window.XMLHttpRequest){
+                xmlhttp=new XMLHttpRequest();
+            }else{
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+/*
+            if(xmlhttp==null)
+               alert(null);*/
+            xmlhttp.onreadystatechange=function(){
+//                alert(xmlhttp.status+","+xmlhttp.readyState);
+                if(xmlhttp.readyState==4&&xmlhttp.status==200){
+                    var str1=xmlhttp.responseText;
+//                    alert(str1);
+                    test.value=str1;
+                }
+            }
+
+            xmlhttp.open("GET","/solveTest?str="+str,true);
+            xmlhttp.send();
+        }
+    </script>
+</head>
+<body>
+请输入数据<input id="test"><button id="btn" onclick="test()">提交</button>
+</body>
+</html>

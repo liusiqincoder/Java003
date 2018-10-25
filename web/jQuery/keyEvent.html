@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<!---->
+<head>
+    <meta charset="UTF-8">
+    <title>按键事件</title>
+    <script src="jquery-2.1.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+//            alert();
+            /*$("div").hover(function() {
+                $(this).css("background-color", "red");
+//                $("p").hide("slow");
+                $("p").toggle("slow");
+            });*/
+
+           /* $("button").click(function(){
+                $("#div1").fadeIn("fast");
+                $("#div2").fadeIn("slow");
+                $("#div3").fadeIn(3000);
+            })*/
+
+            /*$("button").click(function(){
+               $("#div1").slideToggle("slow");
+            });*/
+
+            /*$("button").click(function(){
+               $("#div1").animate({left:'300px'});
+                $("#div1").animate({width:'-130px'});
+                $("#div1").animate({down:'30px',background:'blue',opacity:0.7});
+                $("#div1").animate({left:'300px'});
+            });*/
+            $("button").click(function() {
+//                alert("文本框里的值为："+$("#div1 p").text());
+              /*  $.get("/jqueryTest",function(data,status){
+                    //在servlet的dopost里
+                    alert("数据："+data+"\n状态："+status);
+                })*/
+                $.post("/jqueryTest",//doget里
+                        {
+                            name:"菜鸟教程",
+                            val:"hahaha"
+                        },
+                function(data,status){
+                    alert("数据："+data+"\n状态："+status);
+                })
+            });
+            $("p").load("test.txt",function(responseTxt,statusTxt,xhr){
+                if(statusTxt=="success")
+                    alert("外部内容加载成功!");
+                if(statusTxt=="error")
+                    alert("Error: "+xhr.status+": "+xhr.statusText);
+            });
+
+        })
+    </script>
+</head>
+<body>
+<!--<button>淡如效果</button>-->
+<!--<button>划入画出效果</button>-->
+<button>动画效果</button>
+<div id="div1" style="width: 200px;height: 200px;position:absolute;background: red;">
+<p>我是div，如果你点击我我就会变红</p>
+</div><br>
+<div id="div2" style="width: 200px;height: 200px;display: none;background: blue"></div><br>
+<div id="div3" style="width:200px;height: 200px;display: none;background: green"></div>
+</body>
+</html>

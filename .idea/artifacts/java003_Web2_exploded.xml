@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="java003:Web2 exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/java003_war_exploded/WEB-INF</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="java003/web/Web2" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="java003" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="C:/Java/jdk1.8.0_131/jre/lib/mysql-connector-java-8.0.12.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/lib/jstl.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/lib/standard.jar" />
+          <element id="library" level="project" name="jstl" />
+          <element id="library" level="project" name="standard" />
+          <element id="library" level="module" name="JUnit4" module-name="java003" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
